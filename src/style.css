@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 50px;
+  background-color: rgb(56, 157, 224);
+}
+
+.todo-sub-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+
+.todo-li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 20px;
+}
+
+.todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.todo-hr {
+  color: rgb(63, 63, 63);
+}
+
+.todo-h3 {
+  font-size: 26px;
+  font-weight: 600;
+  color: tomato;
+}
+
+.add-to-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.todo-input {
+  border: none;
+  font-size: 20px;
+  align-self: flex-start;
+  width: 90%;
+}
+
+.todo-input:focus {
+  outline: 0;
+  color: rgb(62, 62, 62);
+  font-size: 20px;
+}
+
+.input::placeholder {
+  font-size: 17px;
+}
+
+.fa-turn-down {
+  transform: rotate(90deg);
+  cursor: pointer;
+  color: rgb(74, 74, 74);
+}
+
+.fa-arrows-rotate {
+  color: rgb(82, 82, 82);
+}
+
+.clearAll {
+  padding: 20px;
+  border: 0;
+  background: rgb(237, 237, 237);
+  width: 100%;
+  cursor: pointer;
+  font-size: 18px;
+  color: rgb(47, 47, 47);
+}
+
+#addBtn {
+  background-color: white;
+  border: none;
+}
+
+.js-list {
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+
+.js-list li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0 var(--fs-1);
+  font-size: var(--fs-1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--fs-0);
+  position: relative;
+}
+
+.js-list li button {
+  border: 2px solid #c1c1c3;
+  cursor: pointer;
+  color: transparent;
+  border-radius: 2px;
+  margin: var(--fs-1) 0;
+  background-color: transparent;
+  width: 18px;
+  height: 18px;
+}
+
+.todo-sub-container .js-list li > .move-item {
+  cursor: move;
+}
+
+.todo-sub-container .js-list li > .move-item.none {
+  cursor: move;
+  display: none;
+}
+
+.todo-sub-container .js-list li > .delete-item {
+  cursor: pointer;
+  display: none;
+}
+
+.todo-sub-container .js-list li > .delete-item.active {
+  display: inline;
+}
+
+.todo-sub-container .js-list li button > i {
+  color: #2e8ae6;
+  display: none;
+}
+
+.js-list li button i.active {
+  display: inline;
+}
+
+.js-list li .container {
+  flex: 1;
+  font-size: var(--fs-1);
+  word-wrap: break-word;
+  display: flex;
+  align-items: center;
+}
+
+.js-list li .container.active {
+  text-decoration: line-through;
+}
+
+.js-list li .container .content-description {
+  width: 100%;
+  outline: none;
+  padding: 16px 0;
+}
+
+.js-list li.editing {
+  background-color: #fffeca;
+}
+
+.fa-arrows-rotate.active {
+  animation: animateRefresh 2s;
+}
+
+@keyframes animateRefresh {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(720deg);
+  }
+}
